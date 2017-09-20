@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz!</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script language="JavaScript">
+        $(document).ready(function (){
+            function update() {
+                $.get("rest/quiz", function (data) {
+                    $("#test").html(JSON.stringify(data));
+                })
+            }
+            function write(){
+                var quizName = "tits";
+                var data = {
+                    name: quizName,
+                    start: new Date()
+                };
+                $.ajax({
+                    url: 'rest/quiz/'+quizName,
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json'
+                });
+            }
+            write();
+            $("#butt").click(update)
+        });
+    </script>
+</head>
+<body>
+<h1>Quiz!</h1>
+<button id="butt">Click</button>
+<div id="test"></div>
+</body>
+</html>
