@@ -1,7 +1,6 @@
 package services;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by olehe on 20-Sep-17.
@@ -10,7 +9,7 @@ import java.util.Date;
 
 public class Quiz {
     private String name;
-    private Date start;
+    private String start;
     private ArrayList<Question> questions;
     private ArrayList<User> users;
 
@@ -22,11 +21,11 @@ public class Quiz {
         this.name = name;
     }
 
-    public Date getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(Date start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
@@ -38,11 +37,15 @@ public class Quiz {
         this.questions = questions;
     }
 
-    public void addQuestion(Question q){
-        questions.add(q);
+    public ArrayList<User> getUsers() {
+        return users;
     }
 
-    public void addUser(User user){
-        users.add(user);
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
+    }
+
+    public void addQuestion(Question question){
+        this.questions.add(question);
     }
 }

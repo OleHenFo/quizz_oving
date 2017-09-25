@@ -2,6 +2,7 @@ package services;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,18 +11,39 @@ import java.util.Map;
  * Created by olehe on 20-Sep-17.
  *
  */
+
 @Path("/quiz")
 public class QuizService {
-    private Map<String,Quiz> quizMap = new HashMap<String, Quiz>();
+    private static Map<String,Quiz> quizMap = new HashMap<>();
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection getShit(){
+    public Collection<Quiz> getQuizzes(){
         return quizMap.values();
     }
 
+    @GET
+    @Path("/{quizName}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Quiz getQuiz(@PathParam("quizName") String n){
+        return quizMap.get(n);
+    }
+
+    @GET
+    @Path("/{quizName}/users")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<User> getUserScore(@PathParam("quizName") String quizName){
+        return quizMap.get(quizName).getUsers();
+    }
+
+    @PUT
+    @Path("/{quizName}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void addQuestion(@PathParam("quizName") String quizName,Question question){
+        quizMap.get(quizName).addQuestion(question);
+    }
+
     @POST
-    @Path("{quizName}")
     @Consumes(MediaType.APPLICATION_JSON)
     public void newQuiz(Quiz quiz){
         quizMap.put(quiz.getName(),quiz);

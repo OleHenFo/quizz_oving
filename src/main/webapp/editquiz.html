@@ -2,28 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quiz!</title>
+    <title>Edit Quiz</title>
     <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script language="JavaScript">
+    <script>
         $(document).ready(function (){
-            $("#new").click(function () {
-                var quizName = prompt("Quiz name:","");
-                localStorage.setItem("quizName",quizName);
-                var data = {
-                    name: quizName,
-                    start: "",
-                    questions: [],
-                    users: []
-                };
-                $.ajax({
-                    url: 'rest/quiz',
-                    type: 'POST',
-                    data: JSON.stringify(data),
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: 'json',
-                    success: window.location = ("editquiz.html")
-                });
+            var quizName = localStorage.getItem("quizName");
+            $.get("rest/quiz/"+quizName,function (data) {
+                alert(JSON.stringify(data));
             })
         });
     </script>
@@ -35,11 +21,11 @@
             display: block;
             background-color: turquoise;
             text-align: center;
-            width: 550px;
-            height: 300px;
+            width: 1000px;
+            height: 800px;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 200px;
+            margin-top: 40px;
             padding-bottom: 20px;
             border-radius: 20px;
             -webkit-box-shadow: 10px 10px darkcyan;
@@ -69,10 +55,8 @@
     </style>
 </head>
 <body>
-<div id="mid">
-    <h1>Quiz!</h1><br/>
-    <button id="new">Make Quiz!</button>
-    <button id="join">Join Quiz!</button>
-</div>
+    <div id="mid">
+        <h1 id="quizname"></h1>
+    </div>
 </body>
 </html>
