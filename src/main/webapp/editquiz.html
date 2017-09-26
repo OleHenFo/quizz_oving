@@ -7,10 +7,56 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script>
         $(document).ready(function (){
-            var quizName = localStorage.getItem("quizName");
-            $.get("rest/quiz/"+quizName,function (data) {
-                alert(JSON.stringify(data));
-            })
+            var quiz, quizName;
+            quizName = localStorage.getItem("editQuiz");
+            $("#quizName").html(quizName);
+            $("#questionNr").html("Question 1");
+            update();
+
+            function update(){
+                $.get("rest/quiz/"+quizName,function (data) {
+                    quiz = data;
+                    $("#questionNr").html("Question "+(data.questions.length+1))
+                    clearInputs()
+                });
+            }
+
+            function clearInputs(){
+                $("#questionText").val("");
+                $("#img").val("");
+                $("#time").val(0);
+                $("#correct").val("");
+                $("#wrong1").val("");
+                $("#wrong2").val("");
+                $("#wrong3").val("");
+            }
+
+            $("#next").click(function (){
+                var data = {
+                    question: $("#questionText").val(),
+                    img: $("#img").val(),
+                    time: $("#time").val().toString(),
+                    correct: $("#correct").val(),
+                    answers: [
+                        $("#wrong1").val(),
+                        $("#wrong2").val(),
+                        $("#wrong3").val()
+                    ]
+                };
+                $.ajax({
+                    url: 'rest/quiz/'+quizName,
+                    type: 'PUT',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json'
+                });
+                update();
+            });
+
+            $("#complete").click(function (){
+                alert("Quiz addded!");
+                window.location = ("index.html")
+            });
         });
     </script>
     <style>
@@ -30,7 +76,7 @@
             border-radius: 20px;
             -webkit-box-shadow: 10px 10px darkcyan;
         }
-        #new{
+        #next{
             margin-right: 40px;
         }
 
@@ -49,14 +95,47 @@
             font-family: 'Dekko';
             font-style: oblique;
             font-weight: bold;
-            font-size: 120px;
+            font-size: 40px;
             margin-bottom: 0;
+        }
+
+        h3{
+            font-family: 'Dekko';
+            font-style: oblique;
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 0;
+        }
+
+        #inputs{
+            margin-top:10px;
+            margin-bottom:10px;
+            text-align: left;
+            margin-left: 30%;
+        }
+
+        #time{
+            width: 35px;
         }
     </style>
 </head>
 <body>
     <div id="mid">
-        <h1 id="quizname"></h1>
+        <h1 id="quizName"></h1>
+        <h3 id="questionNr"></h3>
+        <div id="inputs">
+            Question:<br/>
+            <input type="text" id="questionText"><br/>
+            (Optional) Image:<br/>
+            <input type="text" id="img"><br/>
+            Time in sec:<br/> <input id="time" type="number"><br/>
+            Correct Answer:<br/> <input id="correct"><br/>
+            Wrong answer:<br/> <input id="wrong1"><br/>
+            Wrong answer:<br/> <input id="wrong2"><br/>
+            Wrong answer:<br/> <input id="wrong3"><br/>
+        </div>
+        <button id="next">Add</button>
+        <button id="complete">Complete</button><br/>
     </div>
 </body>
 </html>

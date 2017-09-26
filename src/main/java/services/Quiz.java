@@ -11,7 +11,6 @@ public class Quiz {
     private String name;
     private String start;
     private ArrayList<Question> questions;
-    private ArrayList<User> users;
 
     public String getName() {
         return name;
@@ -29,23 +28,15 @@ public class Quiz {
         this.start = start;
     }
 
+    public void setQuestions(ArrayList<Question> questions){
+        this.questions = questions;
+    }
+
     public ArrayList<Question> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(ArrayList<Question> questions) {
-        this.questions = questions;
-    }
-
-    public ArrayList<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
-
     public void addQuestion(Question question){
-        this.questions.add(question);
+        questions.add(question);
     }
 }

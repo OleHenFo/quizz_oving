@@ -8,8 +8,8 @@ import java.util.ArrayList;
  */
 public class Question {
     private String question;
-    private String pic_url;
-    private int time;
+    private String img;
+    private String time;
     private String correct;
     private ArrayList<String> answers;
 
@@ -21,11 +21,11 @@ public class Question {
         this.question = question;
     }
 
-    public int getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
@@ -49,11 +49,11 @@ public class Question {
         this.correct = correct;
     }
 
-    public String getPic_url() {
-        return pic_url;
+    public String getImg() {
+        return img;
     }
 
-    public void setPic_url(String pic_url) {
-        this.pic_url = pic_url;
+    public void setImg(String img) {
+        this.img = img;
     }
 }

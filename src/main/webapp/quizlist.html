@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script language="JavaScript">
+        $(document).ready(function (){
+
+            function setCookie(cname,cvalue,exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = "expires=" + d.toGMTString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+
+            $.get("rest/quiz/",function (data) {
+                var div = $("#quizlist");
+                for (var i = 0; i < data.length; i++){
+                    var q = data[i];
+                    var date = new Date(q["start"]);
+                    div.html(div.html()+"<button class='button' id='"+q["name"]+"'>"+q["name"]+"<br/>"+date.toLocaleDateString()+"<br/>"+date.toLocaleTimeString()+"</button><br/>");
+                }
+            });
+
+            $("#quizlist").on('click','button',function () {
+                var id = this.id;
+                $.get("rest/quiz/"+id,function (data) {
+                    var date = new Date(data["start"]);
+                    var now = new Date();
+                    if (date > now){
+                        alert("Quiz has not started yet!")
+                    } else {
+                        var nick = prompt("Input nickname");
+                        localStorage.setItem("nick",nick);
+                        localStorage.setItem("quiz",id);
+                        $.ajax({
+                            url: 'rest/users/'+id,
+                            type: 'POST',
+                            data: nick,
+                            dataType: 'text/plain',
+                            success: window.location = ("play.html")
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        body{
+            background-color: darkslateblue;
+        }
+        #mid{
+            display: block;
+            background-color: turquoise;
+            text-align: center;
+            width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 200px;
+            padding-bottom: 20px;
+            border-radius: 20px;
+            -webkit-box-shadow: 10px 10px darkcyan;
+        }
+
+        button{
+            margin-top: 15px;
+            background-color: #8fbc8f;
+            border-radius: 20px;
+            width: 180px;
+            height: 100px;
+            font-family: 'Dekko';
+            font-style: oblique;
+            font-weight: bold;
+            font-size: 20px;
+            -webkit-box-shadow: 8px 8px #7eab7e;
+        }
+        h1{
+            font-family: 'Dekko';
+            font-style: oblique;
+            font-weight: bold;
+            font-size: 120px;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="mid">
+    <div id="quizlist">
+    </div>
+</div>
+</body>
+<script>
+
+
+</script>
+</html>

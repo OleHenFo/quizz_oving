@@ -2,17 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quiz!</title>
+    <title>New Quiz</title>
     <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script language="JavaScript">
         $(document).ready(function (){
-            $("#new").click(function () {
-                window.location = ("newquiz.html")
-            });
-            $("#join").click(function () {
-                window.location = ("quizlist.html")
+            $("#next").click(function () {
+                var quizName = $("#name").val();
+                var date = new Date($("#date").val().toString()+"T"+$("#time").val().toString()+":00+02:00");
+                if (quizName.length==0){
+                    alert("You must fill in all the fields")
+                } else {
+                    localStorage.setItem("editQuiz",quizName);
+                    var data = {
+                        name: quizName,
+                        start: date.toString(),
+                        questions: []
+                    };
+                    $.ajax({
+                        url: 'rest/quiz',
+                        type: 'POST',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        success: window.location = ("editquiz.html")
+                    });
+                }
             })
+
         });
     </script>
     <style>
@@ -32,11 +49,9 @@
             border-radius: 20px;
             -webkit-box-shadow: 10px 10px darkcyan;
         }
-        #new{
-            margin-right: 40px;
-        }
 
         button{
+            margin-top: 10px;
             background-color: #8fbc8f;
             border-radius: 20px;
             width: 180px;
@@ -47,20 +62,22 @@
             font-size: 20px;
             -webkit-box-shadow: 8px 8px #7eab7e;
         }
-        h1{
+        h4{
             font-family: 'Dekko';
             font-style: oblique;
             font-weight: bold;
-            font-size: 120px;
+            font-size: 30px;
             margin-bottom: 0;
         }
     </style>
 </head>
 <body>
-<div id="mid">
-    <h1>Quiz!</h1><br/>
-    <button id="new">Make Quiz!</button>
-    <button id="join">Join Quiz!</button>
-</div>
+    <div id="mid">
+        <h4>Quiz name:</h4><br/>
+        <input id="name" type="text"><br/>
+        <h4>Start:</h4><br/>
+        <input id="date" type="date"><input id="time" type="time"><br/>
+        <button id="next">Next</button>
+    </div>
 </body>
 </html>
