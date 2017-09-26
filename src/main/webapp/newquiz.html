@@ -37,6 +37,7 @@
             background-color: darkslateblue;
         }
         #mid{
+            position: relative;
             display: block;
             background-color: turquoise;
             text-align: center;
@@ -44,7 +45,7 @@
             height: 300px;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 200px;
+            margin-top: 100px;
             padding-bottom: 20px;
             border-radius: 20px;
             -webkit-box-shadow: 10px 10px darkcyan;
@@ -69,10 +70,18 @@
             font-size: 30px;
             margin-bottom: 0;
         }
+        #back{
+            float: left;
+            position: absolute;
+            left: 10px;
+            width: 60px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
     <div id="mid">
+        <a href="quizlist.html"><button id="back">Back</button></a>
         <h4>Quiz name:</h4><br/>
         <input id="name" type="text"><br/>
         <h4>Start:</h4><br/>

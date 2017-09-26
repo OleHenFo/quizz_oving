@@ -7,9 +7,10 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script language="JavaScript">
         $(document).ready(function (){
-            var quizName,name,start,questions,q,timer,now,answers;
+            var user,quizName,name,start,questions,q,timer,now,answers,correct,nr;
             answers = [4];
             quizName = localStorage.getItem("quiz");
+            user = localStorage.getItem("nick");
 
             if (quizName.length>0) {
                 $.get("rest/quiz/" + quizName, function (data) {
@@ -31,6 +32,21 @@
 
             }
 
+            $(".ans").click(function () {
+                var ans = $(this).html();
+                if (ans==correct){
+                    $.ajax({
+                        url: 'rest/users/'+user,
+                        type: 'PUT',
+                        data: JSON.stringify(1),
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json'
+                    });
+                }
+                localStorage.setItem(quizName+nr,true);
+                $(".ans").attr('disabled','true');
+            });
+
             function getQuestion(start,questions){
                 now = new Date();
                 var duration = 0;
@@ -42,12 +58,13 @@
                     if (duration-timer<0){
                         nr++;
                     } else if (duration-timer>0) {
-                        answers = shuffle([q["correct"],q["answers"][0],q["answers"][1],q["answers"][2]]);
+                        correct = q["correct"];
+                        answers = shuffle([correct,q["answers"][0],q["answers"][1],q["answers"][2]]);
                         return q;
                     }
                 }
                 alert("Quiz has ended!");
-                window.location = "index.html";
+                window.location = "scoreboard.html";
                 return null;
             }
 
@@ -71,7 +88,7 @@
                 now = new Date();
                 var duration = 0;
                 timer = Math.floor((now - start)/1000);
-                var nr = 0;
+                nr = 0;
                 for (var i = 0; i<questions.length;i++){
                     q = questions[i];
                     duration += parseInt(q["time"]);
@@ -91,11 +108,16 @@
                     $("#a"+i).html(answers[i]);
                 }
                 $("#time").html("Time: "+getTimeLeftOnQ());
+                if (localStorage.getItem(quizName+nr)){
+                    $(".ans").attr('disabled',true);
+                } else {
+                    $(".ans").attr('disabled',false);
+                }
             }
 
             function update(){
                 var t = getTimeLeftOnQ();
-                if (t<0){
+                if (t<=0){
                     q = getQuestion(start,questions);
                 }
                 writeHtml()
@@ -109,6 +131,7 @@
             background-color: darkslateblue;
         }
         #mid{
+            position: relative;
             display: block;
             background-color: turquoise;
             text-align: left;
@@ -159,16 +182,32 @@
             font-size: 30px;
             margin: 0 0 0 0;
         }
+
+        #back{
+            float: left;
+            position: absolute;
+            left: 10px;
+            width: 60px;
+            height: 40px;
+        }
+
+        #quiz{
+            margin:auto;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 <div id="mid">
+    <a href="quizlist.html"><button id="back">Back</button></a>
     <h1 id="quiz"></h1><br/>
     <div id="question">This is a question</div><div id="time">Time: </div><br/>
-    <button id="a0">Test answer</button><br/>
-    <button id="a1"></button><br/>
-    <button id="a2"></button><br/>
-    <button id="a3"></button><br/>
+    <div id="ans">
+    <button class="ans" id="a0">Test answer</button><br/>
+    <button class="ans" id="a1"></button><br/>
+    <button class="ans" id="a2"></button><br/>
+    <button class="ans" id="a3"></button><br/>
+    </div>
 </div>
 <div id="score">
     <ul>

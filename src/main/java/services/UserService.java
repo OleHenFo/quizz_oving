@@ -11,7 +11,6 @@ import java.util.Map;
  * Created by olehe on 26-Sep-17.
  *
  */
-// The Java class will be hosted at the URI path "/helloworld"
 @Path("/users")
 public class UserService {
     static Map<String,ArrayList<String>> userMap = new HashMap<>(999);
@@ -38,10 +37,17 @@ public class UserService {
         return users.get(user);
     }
 
+    @PUT
+    @Path("/{user}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void addScore(@PathParam("user") String user,int score){
+        users.put(user,users.get(user)+score);
+    }
+
     @POST
-    @Path("/{quiz}")
-    @Consumes(MediaType.TEXT_PLAIN)
-    public void newUser(@PathParam("quiz") String quiz, String user){
+    @Path("/{quizName}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void newUser(@PathParam("quizName") String quiz, String user){
         users.put(user,0);
         if (userMap.get(quiz)==null){
             userMap.put(quiz,new ArrayList<String>());
