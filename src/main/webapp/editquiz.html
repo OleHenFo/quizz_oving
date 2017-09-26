@@ -24,7 +24,7 @@
             function clearInputs(){
                 $("#questionText").val("");
                 $("#img").val("");
-                $("#time").val(0);
+                $("#time").val(5);
                 $("#correct").val("");
                 $("#wrong1").val("");
                 $("#wrong2").val("");
@@ -128,7 +128,7 @@
             <input type="text" id="questionText"><br/>
             (Optional) Image:<br/>
             <input type="text" id="img"><br/>
-            Time in sec:<br/> <input id="time" type="number"><br/>
+            Time in sec:<br/> <input id="time" type="number" min=5 max=240><br/>
             Correct Answer:<br/> <input id="correct"><br/>
             Wrong answer:<br/> <input id="wrong1"><br/>
             Wrong answer:<br/> <input id="wrong2"><br/>

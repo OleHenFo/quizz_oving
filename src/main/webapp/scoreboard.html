@@ -7,17 +7,32 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script language="JavaScript">
         $(document).ready(function (){
-            var quizName,users,scores;
+            var quizName,scores,div;
+            div = $("#scoreboard");
+            scores = {};
             quizName = localStorage.getItem("quiz");
             $("#quizName").html(quizName);
-            $.get("rest/users/"+quizName,function (data) {
-                data.forEach(function (u) {
-                    $.get("rest/users/score/"+u,function (data2) {
-                        var div = $("#scoreboard");
-                        div.html(div.html()+"<h2>"+u+": "+data2+"</h2><br/>")
-                    })
-                })
-            })
+
+            function update() {
+                $.get("rest/users/" + quizName, function (data) {
+                    data.forEach(function (u) {
+                        $.get("rest/users/score/" + u +"/"+quizName, function (data2) {
+                            scores[u] = data2;
+                        });
+                    });
+                });
+                writeScores();
+            }
+
+            function writeScores() {
+                var string = "";
+                Object.keys(scores).forEach(function(key) {
+                    string+=("<h2>"+key+": "+scores[key]+"</h2><br/>");
+                });
+                div.html(string);
+            }
+            update();
+            window.setInterval(update,200)
         });
     </script>
     <style>

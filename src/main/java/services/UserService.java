@@ -24,31 +24,33 @@ public class UserService {
 
 
     @GET
-    @Path("/{quizName}")
+    @Path("/{quizName_stamp}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList<String> getUsers(@PathParam("quizName") String quiz) {
+    public ArrayList<String> getUsers(@PathParam("quizName_stamp") String quiz) {
         return userMap.get(quiz);
     }
 
     @GET
-    @Path("/score/{user}")
+    @Path("/score/{user}/{quizName_stamp}")
     @Produces(MediaType.APPLICATION_JSON)
-    public int getUserScore(@PathParam("user") String user) {
-        return users.get(user);
+    public int getUserScore(@PathParam("user") String user,@PathParam("quizName_stamp") String quiz) {
+        return users.get(user+quiz);
     }
 
     @PUT
-    @Path("/{user}")
+    @Path("/{user}/{quizName_stamp}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void addScore(@PathParam("user") String user,int score){
-        users.put(user,users.get(user)+score);
+    public void addScore(@PathParam("user") String user,@PathParam("quizName_stamp") String quiz,int score){
+        users.put(user+quiz,users.get(user+quiz)+score);
     }
 
     @POST
-    @Path("/{quizName}")
+    @Path("/{quizName_stamp}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void newUser(@PathParam("quizName") String quiz, String user){
-        users.put(user,0);
+    public void newUser(@PathParam("quizName_stamp") String quiz, String user){
+        if (!users.containsKey(user+quiz)){
+            users.put(user+quiz,0);
+        }
         if (userMap.get(quiz)==null){
             userMap.put(quiz,new ArrayList<String>());
         }

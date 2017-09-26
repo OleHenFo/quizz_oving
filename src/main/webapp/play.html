@@ -36,14 +36,14 @@
                 var ans = $(this).html();
                 if (ans==correct){
                     $.ajax({
-                        url: 'rest/users/'+user,
+                        url: 'rest/users/'+user+'/'+quizName,
                         type: 'PUT',
                         data: JSON.stringify(1),
                         contentType: 'application/json; charset=utf-8',
                         dataType: 'json'
                     });
                 }
-                localStorage.setItem(quizName+nr,true);
+                localStorage.setItem(quizName+nr+user+start,true);
                 $(".ans").attr('disabled','true');
             });
 
@@ -108,7 +108,7 @@
                     $("#a"+i).html(answers[i]);
                 }
                 $("#time").html("Time: "+getTimeLeftOnQ());
-                if (localStorage.getItem(quizName+nr)){
+                if (localStorage.getItem(quizName+nr+user+start)){
                     $(".ans").attr('disabled',true);
                 } else {
                     $(".ans").attr('disabled',false);

@@ -40,4 +40,11 @@ public class QuizService {
     public void newQuiz(Quiz quiz){
         quizMap.put(quiz.getName(),quiz);
     }
+
+    @POST
+    @Path("/{m}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void newQuiz(@PathParam("m") String m, Quiz quiz){
+        quizMap.put(quiz.getName(),quiz);
+    }
 }
