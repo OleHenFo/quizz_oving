@@ -37,6 +37,7 @@ $RECYCLE.BIN/
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea
+.iml
 
 # Gradle:
 .idea/**/gradle.xml
