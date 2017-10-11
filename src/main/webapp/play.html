@@ -104,6 +104,7 @@
 
             function writeHtml(){
                 $("#question").html(q["question"]);
+                $("#img").attr("src",q["img"]);
                 for (var i = 0;i<4;i++){
                     $("#a"+i).html(answers[i]);
                 }
@@ -123,7 +124,7 @@
                 writeHtml()
             }
 
-            var id = window.setInterval(update,1000)
+            window.setInterval(update,500)
         });
     </script>
     <style>
@@ -201,6 +202,7 @@
 <div id="mid">
     <a href="quizlist.html"><button id="back">Back</button></a>
     <h1 id="quiz"></h1><br/>
+    <img id="img"/>
     <div id="question">This is a question</div><div id="time">Time: </div><br/>
     <div id="ans">
     <button class="ans" id="a0">Test answer</button><br/>

@@ -11,6 +11,7 @@ import java.util.Map;
  * Created by olehe on 26-Sep-17.
  *
  */
+
 @Path("/users")
 public class UserService {
     static Map<String,ArrayList<String>> userMap = new HashMap<>(999);
