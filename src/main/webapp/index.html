@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Quiz!</title>
     <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script language="JavaScript">
         $(document).ready(function (){
@@ -16,51 +17,13 @@
         });
     </script>
     <style>
-        body{
-            background-color: darkslateblue;
-        }
-        #mid{
-            display: block;
-            background-color: turquoise;
-            text-align: center;
-            width: 550px;
-            height: 300px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 100px;
-            padding-bottom: 20px;
-            border-radius: 20px;
-            -webkit-box-shadow: 10px 10px darkcyan;
-        }
-        #new{
-            margin-right: 40px;
-        }
-
-        button{
-            background-color: #8fbc8f;
-            border-radius: 20px;
-            width: 180px;
-            height: 60px;
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 20px;
-            -webkit-box-shadow: 8px 8px #7eab7e;
-        }
-        h1{
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 120px;
-            margin-bottom: 0;
-        }
     </style>
 </head>
 <body>
 <div id="mid">
-    <h1>Quiz!</h1><br/>
-    <button id="new">Make Quiz!</button>
-    <button id="join">Join Quiz!</button>
+    <h1 class="index">Quiz!</h1><br/>
+    <button class="index" id="new">Make Quiz!</button>
+    <button class="index" id="join">Join Quiz!</button>
 </div>
 </body>
 </html>

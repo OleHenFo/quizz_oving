@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>New Quiz</title>
     <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script language="JavaScript">
         $(document).ready(function (){
@@ -32,59 +33,13 @@
 
         });
     </script>
-    <style>
-        body{
-            background-color: darkslateblue;
-        }
-        #mid{
-            position: relative;
-            display: block;
-            background-color: turquoise;
-            text-align: center;
-            width: 550px;
-            height: 300px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 100px;
-            padding-bottom: 20px;
-            border-radius: 20px;
-            -webkit-box-shadow: 10px 10px darkcyan;
-        }
-
-        button{
-            margin-top: 10px;
-            background-color: #8fbc8f;
-            border-radius: 20px;
-            width: 180px;
-            height: 60px;
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 20px;
-            -webkit-box-shadow: 8px 8px #7eab7e;
-        }
-        h4{
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 30px;
-            margin-bottom: 0;
-        }
-        #back{
-            float: left;
-            position: absolute;
-            left: 10px;
-            width: 60px;
-            height: 40px;
-        }
-    </style>
 </head>
 <body>
     <div id="mid">
-        <a href="quizlist.html"><button id="back">Back</button></a>
-        <h4>Quiz name:</h4><br/>
+        <a href="index.html"><button id="back">Back</button></a>
+        <h4 class="subheader">Quiz name:</h4><br/>
         <input id="name" type="text"><br/>
-        <h4>Start:</h4><br/>
+        <h4 class = "subheader">Start:</h4><br/>
         <input id="date" type="date"><input id="time" type="time"><br/>
         <button id="next">Next</button>
     </div>
