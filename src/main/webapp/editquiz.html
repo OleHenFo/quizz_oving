@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Edit Quiz</title>
     <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script>
         $(document).ready(function (){
@@ -59,68 +60,9 @@
             });
         });
     </script>
-    <style>
-        body{
-            background-color: darkslateblue;
-        }
-        #mid{
-            display: block;
-            background-color: turquoise;
-            text-align: center;
-            width: 1000px;
-            height: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 40px;
-            padding-bottom: 20px;
-            border-radius: 20px;
-            -webkit-box-shadow: 10px 10px darkcyan;
-        }
-        #next{
-            margin-right: 40px;
-        }
-
-        button{
-            background-color: #8fbc8f;
-            border-radius: 20px;
-            width: 180px;
-            height: 60px;
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 20px;
-            -webkit-box-shadow: 8px 8px #7eab7e;
-        }
-        h1{
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 40px;
-            margin-bottom: 0;
-        }
-
-        h3{
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 30px;
-            margin-bottom: 0;
-        }
-
-        #inputs{
-            margin-top:10px;
-            margin-bottom:10px;
-            text-align: left;
-            margin-left: 30%;
-        }
-
-        #time{
-            width: 35px;
-        }
-    </style>
 </head>
 <body>
-    <div id="mid">
+    <div id="editQuizBody">
         <h1 id="quizName"></h1>
         <h3 id="questionNr"></h3>
         <div id="inputs">

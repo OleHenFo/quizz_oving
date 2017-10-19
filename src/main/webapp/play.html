@@ -5,6 +5,7 @@
     <title>Quiz</title>
     <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script language="JavaScript">
         $(document).ready(function (){
             var user,quizName,name,start,questions,q,timer,now,answers,correct,nr;
@@ -127,79 +128,9 @@
             window.setInterval(update,500)
         });
     </script>
-    <style>
-        body{
-            background-color: darkslateblue;
-        }
-        #mid{
-            position: relative;
-            display: block;
-            background-color: turquoise;
-            text-align: left;
-            width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 50px;
-            padding: 20px 20px 20px 20px;
-            border-radius: 20px;
-            -webkit-box-shadow: 10px 10px darkcyan;
-        }
-
-        button{
-            margin-top: 15px;
-            background-color: #8fbc8f;
-            border-radius: 20px;
-            width: auto;
-            height: 80px;
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 20px;
-            -webkit-box-shadow: 8px 8px #7eab7e;
-        }
-        h1{
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 60px;
-            margin: 0 0 0 0;
-        }
-
-        #question{
-            width: auto;
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 40px;
-            margin: 0 0 0 0;
-        }
-
-        #time{
-            width:auto;
-            text-align: left;
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 30px;
-            margin: 0 0 0 0;
-        }
-
-        #back{
-            float: left;
-            position: absolute;
-            left: 10px;
-            width: 60px;
-            height: 40px;
-        }
-
-        #quiz{
-            margin:auto;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-<div id="mid">
+<div id="playBody">
     <a href="quizlist.html"><button id="back">Back</button></a>
     <h1 id="quiz"></h1><br/>
     <img id="img"/>
