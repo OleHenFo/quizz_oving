@@ -5,6 +5,7 @@
     <title>Quiz</title>
     <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script language="JavaScript">
         $(document).ready(function (){
             writeList();
@@ -14,7 +15,7 @@
                     var div = $("#quizlist");
                     div.html("");
                     if (data.length==0){
-                        div.html("<h1>No quiz here!</h1>");
+                        div.html("<h1 id='quizlistHeader'>No quiz here!</h1>");
                     } else {
                         for (var i = 0; i < data.length; i++) {
                             var q = data[i];
@@ -143,69 +144,6 @@
             window.setInterval(writeList,3000)
         });
     </script>
-    <style>
-        body{
-            background-color: darkslateblue;
-        }
-        #mid{
-            position: relative;
-            background-color: turquoise;
-            width: 550px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 100px;
-            padding-bottom: 20px;
-            padding-left: 10px;
-            border-radius: 20px;
-            -webkit-box-shadow: 10px 10px darkcyan;
-        }
-
-        #quizlist{
-            text-align: center;
-        }
-
-        button{
-            margin-top: 15px;
-            background-color: #8fbc8f;
-            border-radius: 20px;
-            width: 180px;
-            height: 100px;
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 20px;
-            -webkit-box-shadow: 8px 8px gray;
-        }
-
-        #back{
-            position: absolute;
-            left:10px;
-            width: 60px;
-            height: 40px;
-        }
-
-        #temp{
-            position: absolute;
-            left:10px;
-            bottom: 10px;
-            width: 60px;
-            height: 40px;
-        }
-
-        .score{
-            margin-left: 10px;
-            width: 60px;
-            height: 40px;
-        }
-
-        h1{
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 80px;
-            margin-bottom: 0;
-        }
-    </style>
 </head>
 <body>
 <div id="mid">

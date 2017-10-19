@@ -1,0 +1,138 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: beige;
+}
+button {
+    margin-top: 10px;
+    background-color: sienna;
+    border-radius: 20px;
+    width: 180px;
+    height: 60px;
+    font-family: 'Dekko';
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 20px;
+    -webkit-box-shadow: 8px 8px saddlebrown;
+}
+
+h1 {
+    font-family: 'Dekko';
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 120px;
+    margin-bottom: 0;
+}
+#mid{
+    position: relative;
+    display: block;
+    background-color: burlywood;
+    text-align: center;
+    width: 550px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px peru;
+}
+
+/*
+Style for index.html
+*/
+
+
+#new {
+    margin-right: 40px;
+}
+
+
+/*
+Style for newquiz.html
+*/
+
+.subheader{
+    font-family: 'Dekko';
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+#back{
+    float: left;
+    position: absolute;
+    left: 10px;
+    width: 60px;
+    height: 40px;
+}
+
+/*
+Style for quizlist.html
+*/
+
+#quizlistHeader{
+    font-family: 'Dekko';
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 80px;
+    margin-bottom: 0;
+}
+
+#quizlist{
+    text-align: center;
+}
+
+#temp{
+     position: absolute;
+     left:10px;
+     bottom: 10px;
+     width: 60px;
+     height: 40px;
+}
+.score{
+    margin-left: 10px;
+    width: 60px;
+    height: 40px;
+}
+
+.waiting{
+    height: 100px;
+}
+.ready{
+    height: 100px;
+}
+.done{
+    height: 100px;
+}
+
+/*
+
+
+
+        button{
+            margin-top: 15px;
+            background-color: #8fbc8f;
+            border-radius: 20px;
+            width: 180px;
+            height: 100px;
+            font-family: 'Dekko';
+            font-style: oblique;
+            font-weight: bold;
+            font-size: 20px;
+            -webkit-box-shadow: 8px 8px gray;
+        }
+
+        #back{
+            position: absolute;
+            left:10px;
+            width: 60px;
+            height: 40px;
+        }
+
+
+
+
+
+        h1*/
