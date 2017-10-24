@@ -1,3 +1,5 @@
+/*Common style:*/
+
 body {
     padding: 0;
     margin: 0;
@@ -106,22 +108,23 @@ Style for quizlist.html
 .done{
     height: 100px;
 }
-#mid{
+#quizListMid{
     position: relative;
     display: block;
     background-color: burlywood;
     text-align: center;
     width: 550px;
-    height: 1000px;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
+    margin-bottom: 100px;
     padding-bottom: 20px;
     border-radius: 20px;
     -webkit-box-shadow: 10px 10px peru;
 }
 
-/*play.html:*/
+/*style for play.html:*/
 #playBody{
     position: relative;
     display: block;
@@ -168,7 +171,7 @@ Style for quizlist.html
     text-align: center;
 }
 
-/*editquiz.html*/
+/*style for editquiz.html*/
 
 #editQuizBody{
     display: block;
