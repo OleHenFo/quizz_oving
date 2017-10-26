@@ -6,17 +6,18 @@ body {
     background: beige;
 }
 button {
-    margin-top: 10px;
     background-color: sienna;
     border-radius: 20px;
-    width: 180px;
-    height: 60px;
     font-family: 'Dekko';
     font-style: oblique;
     font-weight: bold;
-    font-size: 20px;
     -webkit-box-shadow: 8px 8px saddlebrown;
 }
+/*  margin-top: 10px;
+    width: 180px;
+    height: 60px;
+    font-size: 20px;
+*/
 
 h1 {
     font-family: 'Dekko';
@@ -25,7 +26,7 @@ h1 {
     font-size: 120px;
     margin-bottom: 0;
 }
-#mid{
+.body{
     position: relative;
     display: block;
     background-color: burlywood;
@@ -38,6 +39,47 @@ h1 {
     padding-bottom: 20px;
     border-radius: 20px;
     -webkit-box-shadow: 10px 10px peru;
+}
+#quizListBody{
+    position: relative;
+    display: block;
+    background-color: burlywood;
+    text-align: center;
+    width: 550px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px peru;
+}
+#playBody{
+    position: relative;
+    display: block;
+    background-color: beige;
+    text-align: left;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px darkcyan;
+}
+#editQuizBody{
+    display: block;
+    background-color: turquoise;
+    text-align: center;
+    width: 1000px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px darkcyan;
 }
 
 /*
@@ -108,36 +150,10 @@ Style for quizlist.html
 .done{
     height: 100px;
 }
-#quizListMid{
-    position: relative;
-    display: block;
-    background-color: burlywood;
-    text-align: center;
-    width: 550px;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    padding-bottom: 20px;
-    border-radius: 20px;
-    -webkit-box-shadow: 10px 10px peru;
-}
+
 
 /*style for play.html:*/
-#playBody{
-    position: relative;
-    display: block;
-    background-color: beige;
-    text-align: left;
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    padding: 20px 20px 20px 20px;
-    border-radius: 20px;
-    -webkit-box-shadow: 10px 10px darkcyan;
-}
+
 
 #question{
      width: auto;
@@ -173,26 +189,9 @@ Style for quizlist.html
 
 /*style for editquiz.html*/
 
-#editQuizBody{
-    display: block;
-    background-color: turquoise;
-    text-align: center;
-    width: 1000px;
-    height: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    padding-bottom: 20px;
-    border-radius: 20px;
-    -webkit-box-shadow: 10px 10px darkcyan;
-}
 
-#inputs{
-    margin-top:10px;
-    margin-bottom:10px;
-    text-align: left;
-    margin-left: 30%;
-}
+
+
 #time{
     width: 35px;
 }
