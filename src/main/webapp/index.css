@@ -1,0 +1,43 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: beige;
+}
+button {
+    background-color: sienna;
+    border-radius: 20px;
+    font-family: 'Dekko';
+    font-style: oblique;
+    font-weight: bold;
+    -webkit-box-shadow: 8px 8px saddlebrown;
+}
+h1 {
+    font-family: 'Dekko';
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 120px;
+    margin-bottom: 0;
+}
+
+.body{
+    position: relative;
+    display: block;
+    background-color: burlywood;
+    text-align: center;
+    width: 550px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px peru;
+}
+
+.indexButton {
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 80px;
+    width: 190px;
+    font-size: 40px;
+}
