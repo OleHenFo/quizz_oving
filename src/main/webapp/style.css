@@ -8,7 +8,7 @@ body {
 button {
     background-color: sienna;
     border-radius: 20px;
-    font-family: 'Dekko';
+    font-family: 'Trebuchet MS';
     font-style: oblique;
     font-weight: bold;
     -webkit-box-shadow: 8px 8px saddlebrown;
@@ -20,7 +20,7 @@ button {
 */
 
 h1 {
-    font-family: 'Dekko';
+    font-family: 'Trebuchet MS';
     font-style: oblique;
     font-weight: bold;
     font-size: 120px;
@@ -97,7 +97,7 @@ Style for newquiz.html
 */
 
 .subheader{
-    font-family: 'Dekko';
+    font-family: 'Trebuchet MS';
     font-style: oblique;
     font-weight: bold;
     font-size: 30px;
@@ -117,7 +117,7 @@ Style for quizlist.html
 */
 
 #quizlistHeader{
-    font-family: 'Dekko';
+    font-family: 'Trebuchet MS';
     font-style: oblique;
     font-weight: bold;
     font-size: 80px;
@@ -157,7 +157,7 @@ Style for quizlist.html
 
 #question{
      width: auto;
-     font-family: 'Dekko';
+     font-family: 'Trebuchet MS';
      font-style: oblique;
      font-weight: bold;
      font-size: 40px;
@@ -167,7 +167,7 @@ Style for quizlist.html
 #time{
       width:auto;
       text-align: left;
-      font-family: 'Dekko';
+      font-family: 'Trebuchet MS';
       font-style: oblique;
       font-weight: bold;
       font-size: 30px;

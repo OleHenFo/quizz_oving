@@ -6,13 +6,13 @@ body {
 button {
     background-color: sienna;
     border-radius: 20px;
-    font-family: 'Dekko';
+    font-family: 'Trebuchet MS';
     font-style: oblique;
     font-weight: bold;
     -webkit-box-shadow: 8px 8px saddlebrown;
 }
 h1 {
-    font-family: 'Dekko';
+    font-family: 'Trebuchet MS';
     font-style: oblique;
     font-weight: bold;
     font-size: 120px;
