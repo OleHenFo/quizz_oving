@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Scores</title>
-    <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="scoreboard.css">
     <script language="JavaScript">
         $(document).ready(function (){
             var quizName,scores,div;
@@ -37,62 +36,6 @@
             window.setInterval(update,200)
         });
     </script>
-    <style>
-        body{
-            background-color: darkslateblue;
-        }
-        #mid{
-            position: relative;
-            display: block;
-            background-color: turquoise;
-            text-align: center;
-            width: 550px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 100px;
-            padding-bottom: 20px;
-            border-radius: 20px;
-            -webkit-box-shadow: 10px 10px darkcyan;
-        }
-
-        button{
-            margin-top: 15px;
-            background-color: #8fbc8f;
-            border-radius: 20px;
-            width: 180px;
-            height: 100px;
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 20px;
-            -webkit-box-shadow: 8px 8px #7eab7e;
-        }
-        h1{
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 80px;
-            margin-bottom: 0;
-        }
-        h2{
-            text-align: left;
-            font-family: 'Dekko';
-            font-style: oblique;
-            font-weight: bold;
-            font-size: 40px;
-            height: 25px;
-            margin: 0 0 0 20%;
-            padding: 0 0 0 0;
-        }
-
-        #back{
-            float: left;
-            position: absolute;
-            left: 10px;
-            width: 60px;
-            height: 40px;
-        }
-    </style>
 </head>
 <body>
 <div id="scoreboardBody" class="body">
