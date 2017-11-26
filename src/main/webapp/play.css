@@ -1,0 +1,115 @@
+/*Common style:*/
+
+body {
+    padding: 0;
+    margin: 0;
+    background: beige;
+}
+button {
+    background-color: sienna;
+    border-radius: 20px;
+    font-family: 'Trebuchet MS';
+    font-style: oblique;
+    font-weight: bold;
+    -webkit-box-shadow: 8px 8px saddlebrown;
+    margin-top: 10px;
+    height: 60px;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: 'Trebuchet MS';
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 120px;
+    margin-bottom: 0;
+}
+#playBody{
+    position: relative;
+    display: block;
+    background-color: burlywood;
+    text-align: left;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px peru;
+}
+#quizListBody{
+    position: relative;
+    display: block;
+    background-color: burlywood;
+    text-align: center;
+    width: 550px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px peru;
+}
+
+#editQuizBody{
+    display: block;
+    background-color: turquoise;
+    text-align: center;
+    width: 1000px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px darkcyan;
+}
+#new {
+    margin-right: 40px;
+}
+
+/*style for play.html:*/
+
+
+#question{
+    width: auto;
+    font-family: 'Trebuchet MS';
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0 0 0 0;
+}
+
+#time{
+    width:auto;
+    text-align: left;
+    font-family: 'Trebuchet MS';
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 0 0 0;
+}
+
+#back{
+    float: left;
+    position: absolute;
+    left: 10px;
+    width: 60px;
+    height: 40px;
+}
+
+#quiz{
+    margin:auto;
+    text-align: center;
+}
+
+/*style for editquiz.html*/
+
+
+
+
+#time{
+    width: 35px;
+}
